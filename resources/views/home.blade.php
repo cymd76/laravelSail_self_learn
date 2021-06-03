@@ -4,13 +4,11 @@
 @endsection
 @section('javascript')
 @endsection
+@section('header_h1')
+    Home of laravel_docker.
+@endsection
 @section('content')
-    <p class="justify-content-center">Home of laravel_docker.</p>
-@if (Auth::check())
-{{--    {{\Auth::user()->name}}--}}
-    <p class="row"><a href="/logout">ログアウト</a></p>
-@else
-    <p class="row"><a href="/login">ログイン</a></p>
-    <p class="row"><a href="/user-registration">ユーザ登録</a></p>
-@endif
+    <div class="divider-custom"></div>
+    <section class="page-section">
+    </section>
 @endsection

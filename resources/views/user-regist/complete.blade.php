@@ -4,9 +4,10 @@
 @endsection
 @section('javascript')
 @endsection
+@section('header_h1')
+    ユーザ登録完了
+@endsection
 @section('content')
-<div class="col-lg-8 col-xl-7">
     {{--    {{$user->name}} --}}
     <div>Complete user registration.</div>
-</div>
 @endsection

@@ -4,22 +4,31 @@
 @endsection
 @section('javascript')
 @endsection
+@section('header_h1')
+    ログイン
+@endsection
 @section('content')
-<div class="col-lg-8 col-xl-7">
+    <div class="divider-custom"></div>
+    <section class="page-section">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+
 @isset($error)
-    <p class="alert-danger">{{$errors->first('message')}}</p>
+                <p class="alert-danger">{{$errors->first('message')}}</p>
 @endisset
-    <form name="loginform" id="loginform" action="/login" method="post" class="form">
-        {{csrf_field()}}
-        <dl class="form-floating">
-            <dt class="w-100"><label class="form-label">メールアドレス</label></dt>
-            <dd><input type="text" name="email" class="form-control form-text"></dd>
-        </dl>
-        <dl class="form-floating">
-            <dt class="w-100"><label class="form-label">パスワード</label></dt>
-            <dd><input type="text" name="password" class="form-control"></dd>
-        </dl>
-        <button type="submit" name="action" value="send" class="btn-success">ログイン</button>
-    </form>
-</div>
+                <form name="loginform" id="loginform" action="/login" method="post" class="form">
+                    {{csrf_field()}}
+                    <dl class="form-floating">
+                        <dt class="w-100"><label class="form-label">メールアドレス</label></dt>
+                        <dd><input type="text" name="email" class="form-control form-text"></dd>
+                    </dl>
+                    <dl class="form-floating">
+                        <dt class="w-100"><label class="form-label">パスワード</label></dt>
+                        <dd><input type="text" name="password" class="form-control"></dd>
+                    </dl>
+                    <button type="submit" name="action" value="send" class="btn-success">ログイン</button>
+                </form>
+            </div>
+        </div>
+    </section>
 @endsection
