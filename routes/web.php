@@ -26,6 +26,11 @@ Route::get('/user-registration', [\App\Http\Controllers\UserRegisterController::
     ->name('user-register');
 Route::post('/user-registration', [\App\Http\Controllers\UserRegisterController::class, 'store'])
     ->middleware('guest');
+Route::get('/user-remove', [\App\Http\Controllers\UserRegisterController::class, 'remove'])
+    ->middleware('guest')
+    ->name('user-remove');
+//Route::post('/user-registration', [\App\Http\Controllers\UserRegisterController::class, 'store'])
+//    ->middleware('guest');
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'index'])
     ->middleware('guest');
