@@ -20,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/user-registration', [\App\Http\Controllers\UserRegisterController::class, 'create'])
+    ->middleware('guest')
+    ->name('user-register');
+Route::post('/user-registration', [\App\Http\Controllers\UserRegisterController::class, 'store'])
+    ->middleware('guest');
