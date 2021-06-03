@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace App\Http\Controllers;
 Use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 Use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -24,6 +25,7 @@ class UserRegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
+        event(new Registered($user));
         return view('user-regist.complete', compact('user'));
     }
 
