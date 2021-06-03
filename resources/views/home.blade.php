@@ -11,7 +11,7 @@
     <p><a href="/logout">ログアウト</a></p>
 @else
     <p><a href="/login">ログイン</a></p>
-    <p><a href="/user-registartion">ユーザ登録</a></p>
+    <p><a href="/user-registration">ユーザ登録</a></p>
 @endif
 </body>
 </html>
