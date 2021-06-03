@@ -26,3 +26,11 @@ Route::get('/user-registration', [\App\Http\Controllers\UserRegisterController::
     ->name('user-register');
 Route::post('/user-registration', [\App\Http\Controllers\UserRegisterController::class, 'store'])
     ->middleware('guest');
+
+Route::get('/login', [\App\Http\Controllers\LoginController::class, 'index'])
+    ->middleware('guest');
+Route::post('/login', [\App\Http\Controllers\LoginController::class, 'authenticate'])
+    ->middleware('guest');
+Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
