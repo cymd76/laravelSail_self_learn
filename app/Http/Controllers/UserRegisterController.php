@@ -26,4 +26,15 @@ class UserRegisterController extends Controller
         ]);
         return view('user-regist.complete', compact('user'));
     }
+
+    /**
+     * とりあえず、都度消すのも面倒なので、admin 以外全消しで
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function remove(Request $request)
+    {
+        User::where('id', '!=', 1)->orWhereNull('id')->delete();
+        return view('user-regist.removed');
+    }
 }
